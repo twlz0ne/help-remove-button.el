@@ -5,6 +5,8 @@
 ;; Author: Gong Qijian <gongqijian@gmail.com>
 ;; Created: 2024/10/16
 ;; Version: 0.1.0
+;; Last-Updated: 2024-10-17 13:39:20 +0800
+;;           by: Gong Qijian
 ;; Package-Requires: ((emacs "28.1"))
 ;; URL: https://github.com/twlz0ne/help-remove-button.el
 ;; Keywords: help
@@ -24,7 +26,32 @@
 
 ;;; Commentary:
 
+;; # help-remove-button.el
+
 ;; Remove button for Help buffer.
+
+;; ![Remove button for advice](./remove-advice.png)
+
+;; ![Remove button for generic](./remove-generic.png)
+
+;; ### Installation
+
+;; * Manual
+
+;; Clone this repository to `/path/to/help-remove-button/`.  Add the following to your configuration file:
+
+;; ``` elisp
+;; (add-to-list 'load-path "/path/to/help-remove-button/")
+;; (require 'help-remove-button)
+;; ```
+
+;; * Quelpa
+
+;; ``` elisp
+;; (quelpa '(help-remove-button :fetcher github
+;;                              :repo "twlz0ne/help-remove-button.el"
+;;                              :files ("help-remove-button.el")))
+;; ```
 
 ;;; Change Log:
 
