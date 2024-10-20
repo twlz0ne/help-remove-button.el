@@ -4,8 +4,8 @@
 
 ;; Author: Gong Qijian <gongqijian@gmail.com>
 ;; Created: 2024/10/16
-;; Version: 0.1.0
-;; Last-Updated: 2024-10-20 15:27:27 +0800
+;; Version: 0.1.1
+;; Last-Updated: 2024-10-20 16:00:05 +0800
 ;;           by: Gong Qijian
 ;; Package-Requires: ((emacs "28.1"))
 ;; URL: https://github.com/twlz0ne/help-remove-button.el
@@ -111,8 +111,12 @@ Return t if advice was found."
   (when-let* ((generic (cl-generic-ensure-function function))
               (mt (cl--generic-method-table generic))
               (me (cl--generic-member-method specializers qualifiers mt)))
+    ;; Remove from describe buffer.
     (setf (cl--generic-method-table generic)
-          (seq-filter (lambda (x) (not (eq x (car me)))) mt))))
+          (seq-filter (lambda (x) (not (eq x (car me)))) mt))
+    ;; Make the changes take effect. Otherwise, the removed method will still be called.
+    (let ((gfun (cl--generic-make-function generic)))
+      (defalias function gfun))))
 
 (defun help-remove-button--add-button-for-cl-method (function)
   "Add a button to remove generic method of FUNCTION in current buffer.
