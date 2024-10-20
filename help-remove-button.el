@@ -5,7 +5,7 @@
 ;; Author: Gong Qijian <gongqijian@gmail.com>
 ;; Created: 2024/10/16
 ;; Version: 0.1.0
-;; Last-Updated: 2024-10-17 13:39:20 +0800
+;; Last-Updated: 2024-10-20 15:27:27 +0800
 ;;           by: Gong Qijian
 ;; Package-Requires: ((emacs "28.1"))
 ;; URL: https://github.com/twlz0ne/help-remove-button.el
@@ -108,9 +108,9 @@ Return t if advice was found."
 ;; Base on Erik Anderson's work at https://github.com/ebpa/tui.el/blob/52d2f343c602ff04dfd2ee871c6e0e1212e2cc8b/tui-node-types.el#L172-L179
 (defun help-remove-button--cl-generic-remove-method (function qualifiers specializers)
   "Remove a method from generic FUNCTION."
-    (when-let* ((generic (cl-generic-ensure-function function))
-                (mt (cl--generic-method-table generic))
-                (me (cl--generic-member-method specializers qualifiers mt)))
+  (when-let* ((generic (cl-generic-ensure-function function))
+              (mt (cl--generic-method-table generic))
+              (me (cl--generic-member-method specializers qualifiers mt)))
     (setf (cl--generic-method-table generic)
           (seq-filter (lambda (x) (not (eq x (car me)))) mt))))
 
