@@ -5,7 +5,7 @@
 ;; Author: Gong Qijian <gongqijian@gmail.com>
 ;; Created: 2024/10/16
 ;; Version: 0.1.1
-;; Last-Updated: 2024-10-20 16:00:05 +0800
+;; Last-Updated: 2024-10-22 20:16:10 +0800
 ;;           by: Gong Qijian
 ;; Package-Requires: ((emacs "28.1"))
 ;; URL: https://github.com/twlz0ne/help-remove-button.el
@@ -28,7 +28,7 @@
 
 ;; # help-remove-button.el
 
-;; Remove button for Help buffer.
+;; Button for `*Help*` buffer to remove Advice / Generic method.
 
 ;; ![Remove button for advice](./remove-advice.png)
 

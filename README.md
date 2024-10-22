@@ -1,8 +1,9 @@
 <!-- This file was generated from elisp commentary section by tool, DO NOT EDIT -->
+<!-- Generated at: 2024-10-22 20:28:25 +0800 -->
 
 # help-remove-button.el
 
-Remove button for Help buffer.
+Button for `*Help*` buffer to remove Advice / Generic method.
 
 ![Remove button for advice](./remove-advice.png)
 
